@@ -1,0 +1,44 @@
+/* Ajuste de imágenes de noticias */
+.news-img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Esto hace que todas sean rectangulares iguales */
+    object-fit: cover;    /* Recorta la imagen para que llene el espacio sin estirarse */
+    border-bottom: 1px solid #eee;
+}
+
+/* Ajuste de las tarjetas para que todas tengan la misma altura */
+.news-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Obliga a la tarjeta a llenar la columna */
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.news-body {
+    padding: 20px;
+    flex-grow: 1; /* Esto empuja el pie de la tarjeta hacia abajo para que alineen */
+    display: flex;
+    flex-direction: column;
+}
+
+.news-title {
+    font-size: 1.05rem;
+    margin-top: 10px;
+    line-height: 1.4;
+    /* Opcional: limita el título a 3 líneas para que no rompa el diseño */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Ajuste para el carrusel principal */
+.carousel-item img {
+    width: 100%;
+    height: 60vh; /* Altura fija relativa a la pantalla (60% del alto) */
+    object-fit: cover;
+}

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyobac | Innovación en Salud Mental</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+       :root {
+        --brand-green: #c1e9e3;
+        --dark-green: #1a4d44;
+        --primary-color: #2c3e50;
+        --accent-color: #3498db;
+        --text-dark: #333;
+        /* Nuevas variables necesarias para las tarjetas */
+        --bg-light: #f8f9fa;
+        --award-bg: #fff3e0;
+        --award-text: #e67e22;
+        --accel-bg: #e8f4fd;
+        --accel-text: #3498db;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        .navbar {
+            background-color: white !important;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .navbar-brand img { height: 50px; }
+
+        /* --- HERO / PRIMERA SLIDE --- */
+        .hero-section {
+            background-color: var(--brand-green);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 50px 0;
+        }
+            .hero-img {
+        /* DIMENSIONES PRINCIPALES */
+        width: 100%;        /* Ocupa el ancho del contenedor */
+        max-width: 550px;   /* Aumenta este número para que sea más grande (ej. 600px o 700px) */
+        height: auto;       /* Mantiene la proporción */
+        
+        /* AJUSTES POSICIÓN */
+        display: block;
+        margin: 0 auto;     /* Centra la imagen en su columna */
+        
+        /* EFECTO OPCIONAL: Para que no parezca una foto estática */
+        filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1)); /* Sombra suave para dar profundidad */
+        transition: transform 0.5s ease;
+        }
+
+        /* Efecto para que se vea un poco más grande al pasar el ratón */
+        .hero-img:hover {
+            transform: scale(1.05) rotate(-2deg); 
+        }
+
+        .member-info {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700; 
+            color: var(--dark-green);
+            font-size: 1.05rem;
+            margin-bottom: 5px; /* Crea el espacio justo antes del icono */
+            display: block;    /* Asegura que ocupe toda la línea */
+        }
+
+        .team-member small {
+        display: block;      /* Fuerza a que salte a una línea nueva */
+        font-weight: 400;    /* Asegura que NO esté en negrita */
+        color: #555;          /* Un color gris más suave para diferenciarlo del nombre */
+        margin-bottom: 10px; /* Crea espacio antes del icono de LinkedIn */
+        font-size: 0.9rem;    /* Un tamaño ligeramente menor */
+        }
+
+        .linkedin-link img {
+            width: 24px; 
+            height: 24px;
+            margin-top: 0; /* Eliminamos el margen superior anterior */
+        }
+
+        .linkedin-link img:hover {
+            transform: scale(1.2);
+        }
+        /* --- SECCIONES ALTERNAS --- */
+        section { padding: 100px 0; }
+        
+        .bg-mint { background-color: var(--brand-green); }
+        .bg-white { background-color: #ffffff; }
+
+        /* --- OFRECEMOS (ESTILO LIMPIO) --- */
+        .postbiotic-feature {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 6px solid var(--dark-green);
+            transition: 0.3s;
+        }
+        .postbiotic-feature:hover { transform: translateX(10px); background: #fff; }
+
+        /* --- EQUIPO --- */
+        .team-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+        .team-member { 
+        text-align: center; 
+        width: 180px; 
+        }
+        .team-img {
+            width: 150px; height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--dark-green);
+            margin-bottom: 15px;
+            background-color: white;
+        }
+
+        /* --- NOTICIAS --- */
+        /* --- NOTICIAS --- */
+        .news-section {
+            padding: 80px 0;
+            background-color: var(--bg-light); /* Fondo gris clarito como la imagen */
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 15px; /* Bordes redondeados */
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: 0.3s;
+            border: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .news-img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .news-meta {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Estilo de las etiquetas (Prensa, Ganador, etc) */
+        .badge-custom {
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        /* Colores específicos de las etiquetas */
+        .badge-award { background: var(--award-bg); color: var(--award-text); }
+        .badge-accel { background: var(--accel-bg); color: var(--accel-text); }
+        .badge-talento { background: #e1f5fe; color: #0288d1; } /* Opcional para variedad */
+
+        .news-title {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            line-height: 1.4;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        /* --- BOTONES --- */
+        .btn-main {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-main:hover { background-color: #2c3e50; color: white; transform: scale(1.05); }
+
+        footer { padding: 50px 0; background: var(--dark-green); color: white; text-align: center; }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="imagenes/Logo.png" alt="Kyobac Logo"></a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 mb-4" style="color: var(--dark-green);">Tu equilibrio mental empieza aquí.</h1>
+                    <p class="lead mb-5">Innovación biotecnológica diseñada para reducir el estrés y la ansiedad de forma natural y eficaz.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSet7NSrcqk8EsQy1oftCg3dcnevxsJ_NIiP5No1gonkrwAQoQ/viewform" class="btn-main">Descubrir MycoRelax</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="imagenes/bote_inclinado.png" alt="MycoRelax" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="ofrecemos" class="bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-lg-2">
+                    <h2 class="mb-4">MycoRelax: El aliado de tu cerebro</h2>
+                    <p class="mb-4">Un postbiótico de precisión basado en <i>Mycobacterium kyogaense</i>, formulado para actuar donde más lo necesitas.</p>
+                    
+                    <div class="postbiotic-feature">
+                        <strong>Efecto Antiinflamatorio:</strong> Estimula tus defensas naturales.
+                    </div>
+                    <div class="postbiotic-feature">
+                        <strong>Modulación Neural:</strong> Equilibra la microglía del sistema nervioso.
+                    </div>
+                    <div class="postbiotic-feature">
+                        <strong>Paz sin somnolencia:</strong> Reduce el estrés sin efectos secundarios.
+                    </div>
+                </div>
+                <div class="col-lg-7 order-lg-1">
+                    <img src="imagenes/mycorelax.png" alt="MycoRelax Producto" class="img-fluid rounded-4 shadow-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quienes-somos" class="bg-mint">
+        <div class="container text-center">
+            <h2 class="mb-5" style="color: var(--dark-green);">Quiénes somos</h2>
+            <p class="mission-text mx-auto mb-5" style="max-width: 800px;">
+                Nuestra misión es transformar la salud mental a través de la ciencia. Ayudamos a las personas a recuperar el control de su vida con soluciones biotecnológicas seguras.
+            </p>
+
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="imagenes/adrian.jpeg" alt="" class="team-img">
+                    <div class="member-info">Adrián Berenguer</div>
+                    <small>CEO</small>
+                    <a href="https://www.linkedin.com/in/adri%C3%A1n-berenguer-agust%C3%AD/ " target="_blank" class="linkedin-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                    </a>
+                </div>
+                <div class="team-member">
+                    <img src="imagenes/markus.png" alt="" class="team-img">
+                    <div class="member-info">Markus Häner</div>
+                    <small>CRO</small>
+                    <a href="https://www.linkedin.com/in/markus-h%C3%A4ner-mart%C3%ADnez-188813270/" target="_blank" class="linkedin-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </a>
+                </div>
+                <div class="team-member">
+                    <img src="imagenes/arturo.png" alt="" class="team-img">
+                    <div class="member-info">Arturo Alapont</div>
+                    <small>BA</small>
+                    <a href="" target="_blank" class="linkedin-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </a>
+                </div>
+                <div class="team-member">
+                    <img src="imagenes/carlos.jpeg" alt="" class="team-img">
+                    <div class="member-info">Carlos Marqués</div>
+                    <small>CMO</small>
+                    <a href="https://www.linkedin.com/in/carlos-marqu%C3%A9s-garc%C3%ADa-21b41b375/" target="_blank" class="linkedin-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </a>
+                </div>
+                <div class="team-member">
+                    <img src="imagenes/sara.jpg" alt="" class="team-img">
+                    <div class="member-info">Sara Monzonís</div>
+                    <small>CFO</small>
+                    <a href="" target="_blank" class="linkedin-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="news-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Actualidad y Reconocimientos</h2>
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <a href="https://www.larazon.es/sociedad/posbiotico-antiinflamatorio-reduce-niveles-estres-efectos-secundarios_2025083068b2b340506ef67d06e7ec29.html" target="_blank" class="text-decoration-none">
+                        <div class="news-card">
+                            <img src="imagenes/98.webp" class="news-img" alt="La Razón">
+                            <div class="news-body">
+                                <div class="news-meta">
+                                    <span>La Razón</span>
+                                    <span>30.08.2025</span>
+                                </div>
+                                <span class="badge-custom badge-accel">Prensa</span>
+                                <h3 class="news-title mt-2">Un posbiótico antiinflamatorio reduce los niveles de estrés sin efectos secundarios</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="https://www.adeituv.es/noticias-entrega-premis-motivem-2025/?lang=ca" target="_blank" class="text-decoration-none">
+                        <div class="news-card">
+                            <img src="imagenes/Motivem-010-1-1920x1281.jpg" class="news-img" alt="Premios Motivem">
+                            <div class="news-body">
+                                <div class="news-meta">
+                                    <span>ADEIT UV</span>
+                                    <span>2025</span>
+                                </div>
+                                <span class="badge-custom badge-award">Award</span>
+                                <h3 class="news-title mt-2">Premios Motivem 2025. La UV reconoce a Kyobac como mejor proyecto de ciencias</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="https://nitbiotec.com/premios-bioval/" target="_blank" class="text-decoration-none">
+                        <div class="news-card">
+                            <img src="imagenes/nit.jpeg" class="news-img" alt="Bioval">
+                            <div class="news-body">
+                                <div class="news-meta">
+                                    <span>Premios Bioval</span>
+                                    <span>2025</span>
+                                </div>
+                                <span class="badge-custom badge-award">Finalista</span>
+                                <h3 class="news-title mt-2">Adrián Berenguer finalista como Joven Talento en Biotecnología</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="https://valencia.secot.org/secot-valencia-emprendimiento-joven-en-uvempren-2025/" target="_blank" class="text-decoration-none">
+                        <div class="news-card">
+                            <img src="imagenes/Imagen1.webp" class="news-img" alt="SECOT">
+                            <div class="news-body">
+                                <div class="news-meta">
+                                    <span>UVemprén - SECOT</span>
+                                    <span>2025</span>
+                                </div>
+                                <span class="badge-custom badge-award">Ganador</span>
+                                <h3 class="news-title mt-2">Mejor proyecto emprendedor de la Universidad de Valencia 2025</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="https://www.uv.es/uvweb/economia/es/noticias/kyobac-labs-talento-emprendedor-facultat-economia-conquista-uv-1285923370035/Novetat.html?id=1286444887696" target="_blank" class="text-decoration-none">
+                        <div class="news-card">
+                            <img src="imagenes/Portada noticia (63).png" class="news-img" alt="Economía UV">
+                            <div class="news-body">
+                                <div class="news-meta">
+                                    <span>Facultat d'Economia UV</span>
+                                    <span>2025</span>
+                                </div>
+                                <span class="badge-custom badge-accel">Talento</span>
+                                <h3 class="news-title mt-2">Reconocimiento al mejor proyecto emprendedor por la Facultad de Economía</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="https://emprendedores.es/innovacion/bioeconomia-ii-competicion-de-innovacion-abierta/" target="_blank" class="text-decoration-none">
+                        <div class="news-card">
+                            <img src="imagenes/bioeconomia_kyobac.jpg" class="news-img" alt="Open Innovation">
+                            <div class="news-body">
+                                <div class="news-meta">
+                                    <span>Revista Emprendedores</span>
+                                    <span>2026</span>
+                                </div>
+                                <span class="badge-custom badge-award">Ganador</span>
+                                <h3 class="news-title mt-2">Kyobac gana la Open Innovation Competition de 2026</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-mint text-center">
+        <div class="container">
+            <h2 class="mb-4" style="color: var(--dark-green);">¿Hablamos?</h2>
+            <p class="mb-5">Únete a la revolución de los postbióticos y mejora tu bienestar.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSet7NSrcqk8EsQy1oftCg3dcnevxsJ_NIiP5No1gonkrwAQoQ/viewform" target="_blank" class="btn-main">Contactar ahora</a>
+            
+            <div class="mt-5">
+                <a href="https://www.linkedin.com/in/kyobac-labs-131b0a3a3/" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="40">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Kyobac. Innovación biotecnológica para la salud mental.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
