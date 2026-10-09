@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!--
+  index.html — Kyobac B2B website: home page.
+  Version: 0.1 · Author: Adrian Berenguer-Agustí (I2SysBio-CSIC) · Date: 2026-10-09
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kyobac Labs | Patentes microbiológicas y bioinformática para empresas</title>
+  <meta name="description" content="Kyobac Labs desarrolla cepas microbianas mejoradas sin modificación genética y soluciones bioinformáticas, y licencia su propiedad intelectual a empresas de nutrición, salud y bioprocesos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Kyobac Labs, inicio">
+        <img src="imagenes/logo_h_claro.png" alt="Kyobac Labs" width="720" height="141">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="mision.html">Misión</a></li>
+          <li><a href="equipo.html">Sobre nosotros</a></li>
+          <li><a href="pipeline.html">Pipeline</a></li>
+          <li><a href="pacientes.html">Pacientes</a></li>
+        </ul>
+        <a class="btn btn--primary nav-cta" href="#contacto">Licenciar tecnología</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero dark">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">Biotecnología microbiana · B2B</span>
+            <h1>Cepas diseñadas por evolución, <span class="gradient-text">listas para licenciar.</span></h1>
+            <p class="lead">Kyobac Labs desarrolla cepas mejoradas sin modificación genética y soluciones bioinformáticas para empresas de nutrición, salud y bioprocesos. Licenciamos nuestra propiedad intelectual en exclusiva por territorio y aplicación.</p>
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="mailto:kyobac.labs@gmail.com?subject=Solicitud%20de%20dossier%20de%20licencia%20KBC01">
+                Solicitar dossier de licencia
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a class="btn btn--ghost" href="pipeline.html">Ver pipeline</a>
+            </div>
+          </div>
+
+          <!-- Decorative illustration: rod-shaped bacteria and a fatty-acid chain (10-HDZ). -->
+          <div class="hero-visual" aria-hidden="true">
+            <svg viewBox="0 0 520 520" fill="none">
+              <defs>
+                <linearGradient id="hv-g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#93b4ff"/>
+                  <stop offset="1" stop-color="#10b981"/>
+                </linearGradient>
+                <linearGradient id="hv-g2" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#6d4bd8"/>
+                  <stop offset="1" stop-color="#3b6fe0"/>
+                </linearGradient>
+                <radialGradient id="hv-glow">
+                  <stop offset="0" stop-color="#3b6fe0" stop-opacity=".45"/>
+                  <stop offset="1" stop-color="#3b6fe0" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <circle cx="260" cy="270" r="240" fill="url(#hv-glow)"/>
+              <path d="M10 440C130 330 230 470 350 330S470 150 515 70" stroke="#93b4ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 12" opacity=".55"/>
+              <path d="M0 360C120 280 210 400 330 260S450 90 505 20" stroke="#6ee7b7" stroke-width="2" stroke-linecap="round" stroke-dasharray="0 14" opacity=".45"/>
+
+              <g class="float">
+                <g transform="translate(265 255) rotate(-28)">
+                  <rect x="-115" y="-36" width="230" height="72" rx="36" fill="url(#hv-g1)" opacity=".92"/>
+                  <rect x="-103" y="-25" width="206" height="50" rx="25" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+                  <circle cx="-55" cy="-4" r="7" fill="#fff" fill-opacity=".55"/>
+                  <circle cx="-20" cy="8" r="5" fill="#fff" fill-opacity=".45"/>
+                  <circle cx="25" cy="-6" r="8" fill="#fff" fill-opacity=".5"/>
+                  <circle cx="62" cy="7" r="5" fill="#fff" fill-opacity=".4"/>
+                </g>
+              </g>
+              <g class="float float--slow">
+                <g transform="translate(165 375) rotate(24)">
+                  <rect x="-72" y="-23" width="144" height="46" rx="23" fill="url(#hv-g2)" opacity=".9"/>
+                  <circle cx="-25" cy="0" r="5" fill="#fff" fill-opacity=".45"/>
+                  <circle cx="18" cy="-3" r="6" fill="#fff" fill-opacity=".4"/>
+                </g>
+                <g transform="translate(400 395) rotate(-68)">
+                  <rect x="-62" y="-20" width="124" height="40" rx="20" stroke="url(#hv-g1)" stroke-width="3"/>
+                </g>
+              </g>
+              <g class="float">
+                <g transform="translate(130 160) rotate(42)">
+                  <rect x="-46" y="-15" width="92" height="30" rx="15" fill="url(#hv-g2)" opacity=".65"/>
+                </g>
+              </g>
+
+              <!-- Zig-zag carbon chain with a cis kink, a nod to 10(Z)-hexadecenoic acid. -->
+              <g stroke="#e6ecf8" stroke-opacity=".8" stroke-width="2.5" stroke-linejoin="round">
+                <polyline points="290,110 308,98 326,110 344,98 362,110 380,98 392,116 410,128 428,116 446,128 464,116"/>
+              </g>
+              <g fill="#6ee7b7">
+                <circle cx="290" cy="110" r="4"/><circle cx="326" cy="110" r="4"/><circle cx="362" cy="110" r="4"/>
+                <circle cx="392" cy="116" r="4"/><circle cx="428" cy="116" r="4"/><circle cx="464" cy="116" r="4"/>
+              </g>
+              <text x="380" y="160" fill="#a9b6d3" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">10(Z)-HDZ</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><strong>3</strong><span>patentes en preparación ante la OEPM</span></div>
+          <div class="stat"><strong>0 OGM</strong><span>mejora por evolución adaptativa en laboratorio</span></div>
+          <div class="stat"><strong>&gt;60 %</strong><span>ahorro objetivo en medio de cultivo (melaza y suero)</span></div>
+          <div class="stat"><strong>4</strong><span>mercados europeos para una sola cepa</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we offer -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Qué ofrecemos</span>
+          <h2>Propiedad intelectual microbiana para tu cartera de productos</h2>
+          <p class="lead">No vendemos el producto final: diseñamos la cepa, la protegemos y la ponemos en manos de la empresa que la lleva al mercado.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="14" r="3"/></svg>
+            </div>
+            <h3>Licencias de patentes microbiológicas</h3>
+            <p>Cepas mejoradas, sus métodos de obtención y su proceso de producción, licenciados en exclusiva por territorio y aplicación para que tu competencia no pueda copiarlos.</p>
+            <a class="link-arrow" href="pipeline.html">Ver cartera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M13.5 6l-3 12"/></svg>
+            </div>
+            <h3>Soluciones bioinformáticas</h3>
+            <p>Diseño de cepas y de consorcios microbianos, y gemelos digitales del bioproceso para escalar la producción con menos ensayos de prueba y error.</p>
+            <a class="link-arrow" href="mision.html#como-trabajamos">Cómo trabajamos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.6 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.4-2.5L14 9V3"/><path d="M7.5 15h9"/></svg>
+            </div>
+            <h3>Evaluación en tu proceso</h3>
+            <p>Antes de firmar, prueba la cepa en tus instalaciones durante dos o tres meses mediante un acuerdo de transferencia de material (MTA).</p>
+            <a class="link-arrow" href="#licenciar">Proceso de licencia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application areas -->
+    <section class="section section--snow">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Áreas de aplicación</span>
+          <h2>Una plataforma, varios mercados</h2>
+          <p class="lead">La misma tecnología de mejora de cepas se aplica a la salud, a la industria y al medio ambiente.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature reveal">
+            <div class="feature-media media--blue" aria-hidden="true">
+              <svg viewBox="0 0 400 300" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+                <g stroke-opacity=".55">
+                  <path d="M200 150 110 80M200 150 300 70M200 150 90 210M200 150 310 220M200 150 200 40M110 80 60 120M300 70 350 130M90 210 150 260M310 220 250 265"/>
+                </g>
+                <circle cx="200" cy="150" r="26" fill="#10b981" stroke="none"/>
+                <g fill="#fff" stroke="none">
+                  <circle cx="110" cy="80" r="10"/><circle cx="300" cy="70" r="12"/><circle cx="90" cy="210" r="11"/>
+                  <circle cx="310" cy="220" r="10"/><circle cx="200" cy="40" r="8"/><circle cx="60" cy="120" r="6"/>
+                  <circle cx="350" cy="130" r="7"/><circle cx="150" cy="260" r="6"/><circle cx="250" cy="265" r="7"/>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <span class="eyebrow">Salud mental y bienestar</span>
+              <h3>Postbióticos para la reducción del estrés y la ansiedad</h3>
+              <p>KBC01 es nuestra cepa de <i>Mycobacterium kyogaense</i> optimizada para producir 10(Z)-HDZ, un lípido inmunorregulador. Es la base de MycoRelax, un postbiótico con mecanismo no sedante que buscamos licenciar a laboratorios y marcas de complementos.</p>
+              <a class="link-arrow" href="pipeline.html">Ver en el pipeline <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature-media media--violet" aria-hidden="true">
+              <svg viewBox="0 0 400 300" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M150 50h100M160 50v20h80V50M140 70h120v150a30 30 0 0 1-30 30h-60a30 30 0 0 1-30-30z"/>
+                <path d="M140 140c20-10 40 10 60 0s40-10 60 0" stroke="#6ee7b7"/>
+                <g fill="#fff" fill-opacity=".7" stroke="none">
+                  <circle cx="175" cy="200" r="6"/><circle cx="210" cy="180" r="4"/><circle cx="225" cy="215" r="7"/>
+                  <circle cx="190" cy="165" r="3"/><circle cx="240" cy="170" r="4"/>
+                </g>
+                <path d="M260 100h50v-30M90 190h50" stroke-opacity=".6"/>
+                <circle cx="310" cy="60" r="10" stroke-opacity=".6"/>
+              </svg>
+            </div>
+            <div>
+              <span class="eyebrow">Bioprocesos industriales</span>
+              <h3>Cepas que crecen en subproductos</h3>
+              <p>Adaptamos nuestras cepas a medios de bajo coste como la melaza y el suero lácteo. Así convertimos residuos agroalimentarios en ingredientes de alto valor y reducimos el coste de producción del licenciatario.</p>
+              <a class="link-arrow" href="pipeline.html">Ver en el pipeline <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature-media media--green" aria-hidden="true">
+              <svg viewBox="0 0 400 300" fill="none" stroke="#fff" stroke-width="2.5">
+                <rect x="90" y="70" width="110" height="38" rx="19" transform="rotate(-20 145 89)"/>
+                <rect x="210" y="150" width="120" height="40" rx="20" fill="#fff" fill-opacity=".15" transform="rotate(15 270 170)"/>
+                <rect x="120" y="180" width="80" height="30" rx="15" transform="rotate(35 160 195)"/>
+                <g fill="#fff" fill-opacity=".8" stroke="none">
+                  <circle cx="250" cy="90" r="14"/><circle cx="278" cy="96" r="12"/><circle cx="262" cy="118" r="11"/>
+                  <circle cx="110" cy="150" r="9"/><circle cx="300" cy="240" r="10"/>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <span class="eyebrow">Salud intestinal</span>
+              <h3>Consorcios microbianos definidos</h3>
+              <p>Diseñamos consorcios microbianos mínimos y bien caracterizados para nuevas aplicaciones en salud intestinal.</p>
+              <a class="link-arrow" href="pipeline.html">Ver en el pipeline <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature-media media--sage" aria-hidden="true">
+              <svg viewBox="0 0 400 300" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M200 170c-60-10-80-70-60-120 50 10 80 60 60 120zM200 170V110"/>
+                <path d="M60 190h280M80 220h240M100 250h200" stroke-opacity=".55"/>
+                <rect x="130" y="205" width="40" height="14" rx="7" fill="#fff" fill-opacity=".6" stroke="none"/>
+                <rect x="235" y="232" width="34" height="12" rx="6" fill="#fff" fill-opacity=".6" stroke="none"/>
+              </svg>
+            </div>
+            <div>
+              <span class="eyebrow">Agroambiental</span>
+              <h3>Biorremediación y suelos ecológicos</h3>
+              <p>Soluciones microbianas para recuperar suelos agrícolas y acelerar su transición a la agricultura ecológica.</p>
+              <a class="link-arrow" href="pipeline.html">Ver en el pipeline <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Licensing process -->
+    <section id="licenciar" class="section dark">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Cómo licenciar</span>
+          <h2>De la primera reunión a la exclusiva, en cuatro pasos</h2>
+          <p class="lead">Un proceso claro que te permite validar la tecnología antes de comprometer la inversión.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><h3>Acuerdo de confidencialidad</h3><p>Firmamos un NDA y compartimos el dossier técnico completo.</p></li>
+          <li class="step reveal"><h3>Evaluación con MTA</h3><p>Pruebas la cepa en tu proceso durante dos o tres meses.</p></li>
+          <li class="step reveal"><h3>Opción o term sheet</h3><p>Reservamos el territorio y la aplicación mientras cerramos condiciones.</p></li>
+          <li class="step reveal"><h3>Licencia exclusiva</h3><p>Pago inicial y royalties sobre ventas netas. Tú produces y comercializas.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- News and awards -->
+    <section class="section section--snow">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Actualidad</span>
+          <h2>Premios y presencia en medios</h2>
+        </div>
+        <div class="grid grid--3">
+          <a class="news-card reveal" href="https://emprendedores.es/innovacion/bioeconomia-ii-competicion-de-innovacion-abierta/" target="_blank" rel="noopener">
+            <img src="imagenes/prensa/bioeconomia.jpg" alt="" width="682" height="455" loading="lazy">
+            <div class="news-body">
+              <div class="news-meta"><span>Revista Emprendedores</span><span>2026</span></div>
+              <span class="badge badge--award">Ganador</span>
+              <h3>Kyobac Labs gana la Open Innovation Competition de 2026</h3>
+            </div>
+          </a>
+          <a class="news-card reveal" href="https://www.larazon.es/sociedad/posbiotico-antiinflamatorio-reduce-niveles-estres-efectos-secundarios_2025083068b2b340506ef67d06e7ec29.html" target="_blank" rel="noopener">
+            <img src="imagenes/prensa/larazon.jpg" alt="" width="800" height="450" loading="lazy">
+            <div class="news-body">
+              <div class="news-meta"><span>La Razón</span><span>30.08.2025</span></div>
+              <span class="badge">Prensa</span>
+              <h3>Un posbiótico antiinflamatorio reduce los niveles de estrés sin efectos secundarios</h3>
+            </div>
+          </a>
+          <a class="news-card reveal" href="https://www.adeituv.es/noticias-entrega-premis-motivem-2025/?lang=ca" target="_blank" rel="noopener">
+            <img src="imagenes/prensa/motivem.jpg" alt="" width="800" height="534" loading="lazy">
+            <div class="news-body">
+              <div class="news-meta"><span>ADEIT UV</span><span>2025</span></div>
+              <span class="badge badge--award">Premio</span>
+              <h3>Premios Motivem 2025: mejor proyecto de ciencias de la Universitat de València</h3>
+            </div>
+          </a>
+          <a class="news-card reveal" href="https://valencia.secot.org/secot-valencia-emprendimiento-joven-en-uvempren-2025/" target="_blank" rel="noopener">
+            <img src="imagenes/prensa/uvempren.jpg" alt="" width="558" height="312" loading="lazy">
+            <div class="news-body">
+              <div class="news-meta"><span>UVemprén · SECOT</span><span>2025</span></div>
+              <span class="badge badge--award">Ganador</span>
+              <h3>Mejor proyecto emprendedor de la Universitat de València 2025</h3>
+            </div>
+          </a>
+          <a class="news-card reveal" href="https://www.uv.es/uvweb/economia/es/noticias/kyobac-labs-talento-emprendedor-facultat-economia-conquista-uv-1285923370035/Novetat.html?id=1286444887696" target="_blank" rel="noopener">
+            <img src="imagenes/prensa/economia_uv.jpg" alt="" width="800" height="560" loading="lazy">
+            <div class="news-body">
+              <div class="news-meta"><span>Facultat d'Economia UV</span><span>2025</span></div>
+              <span class="badge">Talento</span>
+              <h3>Reconocimiento al mejor proyecto emprendedor por la Facultad de Economía</h3>
+            </div>
+          </a>
+          <a class="news-card reveal" href="https://nitbiotec.com/premios-bioval/" target="_blank" rel="noopener">
+            <img src="imagenes/prensa/bioval.jpg" alt="" width="775" height="807" loading="lazy">
+            <div class="news-body">
+              <div class="news-meta"><span>Premios Bioval</span><span>2025</span></div>
+              <span class="badge badge--award">Finalista</span>
+              <h3>Adrián Berenguer, finalista como Joven Talento en Biotecnología</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <div class="cta-band dark reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2>Hablemos 20 minutos</h2>
+          <p class="lead">Cuéntanos tu línea de producto y te enviamos el dossier técnico de KBC01 bajo acuerdo de confidencialidad.</p>
+          <div class="cta-actions">
+            <a class="btn btn--primary" href="mailto:kyobac.labs@gmail.com?subject=Solicitud%20de%20dossier%20de%20licencia%20KBC01">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              kyobac.labs@gmail.com
+            </a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/kyobac-labs-131b0a3a3/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Supporters band, shared by every page. -->
+  <section class="supporters" aria-labelledby="apoyos-titulo">
+    <div class="container">
+      <h2 id="apoyos-titulo" class="supporters-title">Apoyado por</h2>
+      <ul class="logo-row">
+        <li><img src="imagenes/apoyos/uv.png" alt="Universitat de València" width="160" height="160" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/biotecmed.png" alt="BIOTECMED, Institut Universitari de Biotecnologia i Biomedicina" width="380" height="65" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/iata.png" alt="IATA-CSIC" width="226" height="127" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/i2sysbio.png" alt="I2SysBio, Instituto de Biología Integrativa de Sistemas" width="180" height="180" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/gva.png" alt="Generalitat Valenciana" width="400" height="167" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/uvempren.png" alt="UVemprén" width="360" height="88" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/bisce.png" alt="BISC-E, Biobased Innovation Student Challenge Europe" width="213" height="160" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/ual.png" alt="Universidad de Almería" width="170" height="180" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/agrotecuv.png" alt="AgrotecUV" width="400" height="57" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="imagenes/logo_claro.png" alt="Kyobac Labs" width="640" height="241" loading="lazy">
+          <p>Patentes microbiológicas y soluciones bioinformáticas para empresas. Valencia (España).</p>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="mision.html">Misión</a></li>
+            <li><a href="equipo.html">Sobre nosotros</a></li>
+            <li><a href="pipeline.html">Pipeline</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>MycoRelax</h4>
+          <ul>
+            <li><a href="pacientes.html">Pacientes</a></li>
+            <li><a href="pacientes.html#participa">Encuesta</a></li>
+            <li><a href="pacientes.html#participa">Donaciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:kyobac.labs@gmail.com">kyobac.labs@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/kyobac-labs-131b0a3a3/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="js-year">2026</span> Kyobac Labs. La biotecnología del bienestar.</span>
+        <span>Datos preclínicos. Ningún producto de Kyobac Labs está autorizado para su venta.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

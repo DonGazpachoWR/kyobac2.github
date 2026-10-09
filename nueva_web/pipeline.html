@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--
+  pipeline.html — Kyobac B2B website: pipeline page.
+  Version: 0.1 · Author: Adrian Berenguer-Agustí (I2SysBio-CSIC) · Date: 2026-10-09
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipeline | Kyobac Labs</title>
+  <meta name="description" content="Cartera de programas de Kyobac Labs abiertos a licencia, con su fase de desarrollo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Kyobac Labs, inicio">
+        <img src="imagenes/logo_h_claro.png" alt="Kyobac Labs" width="720" height="141">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="mision.html">Misión</a></li>
+          <li><a href="equipo.html">Sobre nosotros</a></li>
+          <li><a href="pipeline.html" aria-current="page">Pipeline</a></li>
+          <li><a href="pacientes.html">Pacientes</a></li>
+        </ul>
+        <a class="btn btn--primary nav-cta" href="index.html#contacto">Licenciar tecnología</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero dark">
+      <div class="container">
+        <span class="eyebrow">Pipeline</span>
+        <h1>Una cartera de cepas <span class="gradient-text">abierta a licencia.</span></h1>
+        <p class="lead">Cada programa puede licenciarse u opcionarse en la fase en la que se encuentra. Te mostramos el estado real de cada uno.</p>
+      </div>
+    </section>
+
+    <!-- Pipeline table -->
+    <section class="section">
+      <div class="container">
+        <ul class="legend" aria-label="Áreas">
+          <li class="area-mental">Salud mental</li>
+          <li class="area-bioprocess">Bioprocesos</li>
+          <li class="area-gut">Salud intestinal</li>
+          <li class="area-agro">Agroambiental</li>
+        </ul>
+
+        <div class="pipeline reveal">
+          <div class="pipe-head" aria-hidden="true">
+            <span>Programa</span>
+            <div class="pipe-phases">
+              <span>Diseño experimental</span>
+              <span>Desarrollo</span>
+              <span>Preclínico</span>
+              <span>Patente</span>
+              <span>Licencia</span>
+            </div>
+          </div>
+
+          <div class="pipe-row area-mental">
+            <div class="pipe-name">
+              <span class="pipe-area">Salud mental</span>
+              <strong>KBC01 · MycoRelax</strong>
+              <span class="pipe-desc">Cepa de <i>M. kyogaense</i> sobreproductora de 10(Z)-HDZ, base de un postbiótico para la reducción del estrés y la ansiedad.</span>
+            </div>
+            <div>
+              <div class="pipe-track"><span class="pipe-bar" style="--p: 38%;"></span></div>
+              <span class="pipe-stage">Fase actual: desarrollo</span>
+            </div>
+          </div>
+          <div class="pipe-row area-gut">
+            <div class="pipe-name">
+              <span class="pipe-area">Salud intestinal</span>
+              <strong>KBC02</strong>
+              <span class="pipe-desc">Programa en diseño experimental. Detalles bajo acuerdo de confidencialidad.</span>
+            </div>
+            <div>
+              <div class="pipe-track"><span class="pipe-bar" style="--p: 10%;"></span></div>
+              <span class="pipe-stage">Fase actual: diseño experimental</span>
+            </div>
+          </div>
+          <div class="pipe-row area-bioprocess">
+            <div class="pipe-name">
+              <span class="pipe-area">Bioprocesos</span>
+              <strong>KBC03</strong>
+              <span class="pipe-desc">Programa en diseño experimental. Detalles bajo acuerdo de confidencialidad.</span>
+            </div>
+            <div>
+              <div class="pipe-track"><span class="pipe-bar" style="--p: 10%;"></span></div>
+              <span class="pipe-stage">Fase actual: diseño experimental</span>
+            </div>
+          </div>
+          <div class="pipe-row area-agro">
+            <div class="pipe-name">
+              <span class="pipe-area">Agroambiental</span>
+              <strong>KBC04</strong>
+              <span class="pipe-desc">Programa en diseño experimental. Detalles bajo acuerdo de confidencialidad.</span>
+            </div>
+            <div>
+              <div class="pipe-track"><span class="pipe-bar" style="--p: 10%;"></span></div>
+              <span class="pipe-stage">Fase actual: diseño experimental</span>
+            </div>
+          </div>
+          <div class="pipe-row area-agro">
+            <div class="pipe-name">
+              <span class="pipe-area">Agroambiental</span>
+              <strong>KBC05</strong>
+              <span class="pipe-desc">Programa en diseño experimental. Detalles bajo acuerdo de confidencialidad.</span>
+            </div>
+            <div>
+              <div class="pipe-track"><span class="pipe-bar" style="--p: 10%;"></span></div>
+              <span class="pipe-stage">Fase actual: diseño experimental</span>
+            </div>
+          </div>
+          <div class="pipe-row area-agro">
+            <div class="pipe-name">
+              <span class="pipe-area">Agroambiental</span>
+              <strong>KBC06</strong>
+              <span class="pipe-desc">Programa en diseño experimental. Detalles bajo acuerdo de confidencialidad.</span>
+            </div>
+            <div>
+              <div class="pipe-track"><span class="pipe-bar" style="--p: 10%;"></span></div>
+              <span class="pipe-stage">Fase actual: diseño experimental</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scientific basis -->
+    <section class="section section--snow">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Base científica</span>
+          <h2>Qué sabemos hoy de <i>M. kyogaense</i></h2>
+          <p class="lead">La evidencia disponible es preclínica y procede de la cepa de referencia NCTC 11659. KBC01 está en desarrollo y todavía no cuenta con datos propios.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <h3>Resiliencia al estrés en modelo animal</h3>
+            <p>En un modelo de estrés psicosocial crónico en ratón, la preparación inactivada por calor favoreció un afrontamiento proactivo y atenuó conductas de tipo ansioso.</p>
+            <p class="pipe-stage">Amoroso et al., 2021 · <i>Int. J. Mol. Sci.</i> 22:12938</p>
+          </article>
+          <article class="card reveal">
+            <h3>Un lípido con mecanismo definido</h3>
+            <p>El 10(Z)-HDZ actúa a través de PPARα y reduce la señalización proinflamatoria de NF-κB, sin efecto sedante descrito.</p>
+            <p class="pipe-stage">Smith et al., 2019 · Amoroso et al., 2021</p>
+          </article>
+          <article class="card reveal">
+            <h3>Modulación inmunitaria en células humanas</h3>
+            <p>En macrófagos humanos THP-1 expuestos a LPS, la cepa redujo la expresión de citocinas proinflamatorias frente a las reguladoras.</p>
+            <p class="pipe-stage">Holbrook et al., 2023 · <i>Int. J. Mol. Sci.</i> 24:5176</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band dark reveal">
+          <span class="eyebrow">Licencias y opciones</span>
+          <h2>¿Te interesa algún programa?</h2>
+          <p class="lead">Podemos reservar territorio y aplicación desde las primeras fases mediante un acuerdo de opción.</p>
+          <div class="cta-actions">
+            <a class="btn btn--primary" href="mailto:kyobac.labs@gmail.com?subject=Inter%C3%A9s%20en%20el%20pipeline%20de%20Kyobac%20Labs">Escríbenos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Supporters band, shared by every page. -->
+  <section class="supporters" aria-labelledby="apoyos-titulo">
+    <div class="container">
+      <h2 id="apoyos-titulo" class="supporters-title">Apoyado por</h2>
+      <ul class="logo-row">
+        <li><img src="imagenes/apoyos/uv.png" alt="Universitat de València" width="160" height="160" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/biotecmed.png" alt="BIOTECMED, Institut Universitari de Biotecnologia i Biomedicina" width="380" height="65" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/iata.png" alt="IATA-CSIC" width="226" height="127" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/i2sysbio.png" alt="I2SysBio, Instituto de Biología Integrativa de Sistemas" width="180" height="180" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/gva.png" alt="Generalitat Valenciana" width="400" height="167" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/uvempren.png" alt="UVemprén" width="360" height="88" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/bisce.png" alt="BISC-E, Biobased Innovation Student Challenge Europe" width="213" height="160" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/ual.png" alt="Universidad de Almería" width="170" height="180" loading="lazy"></li>
+        <li><img src="imagenes/apoyos/agrotecuv.png" alt="AgrotecUV" width="400" height="57" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="imagenes/logo_claro.png" alt="Kyobac Labs" width="640" height="241" loading="lazy">
+          <p>Patentes microbiológicas y soluciones bioinformáticas para empresas. Valencia (España).</p>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="mision.html">Misión</a></li>
+            <li><a href="equipo.html">Sobre nosotros</a></li>
+            <li><a href="pipeline.html">Pipeline</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>MycoRelax</h4>
+          <ul>
+            <li><a href="pacientes.html">Pacientes</a></li>
+            <li><a href="pacientes.html#participa">Encuesta</a></li>
+            <li><a href="pacientes.html#participa">Donaciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:kyobac.labs@gmail.com">kyobac.labs@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/kyobac-labs-131b0a3a3/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="js-year">2026</span> Kyobac Labs. La biotecnología del bienestar.</span>
+        <span>Datos preclínicos. Ningún producto de Kyobac Labs está autorizado para su venta.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
