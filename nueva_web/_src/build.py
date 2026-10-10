@@ -53,7 +53,7 @@ KNOWLEDGE_FILE = CLARA_DIR / "conocimiento.txt"
 # knowledge_appendix() to keep the prompt (and its cost) small.
 KNOWLEDGE_PAGES = ["index.html", "soluciones.html", "pipeline.html",
                    "mision.html", "equipo.html", "noticias.html",
-                   "empleo.html", "pacientes.html"]
+                   "empleo.html", "pacientes.html", "blog.html"]
 # Pattern of the icon placeholders inside page fragments.
 ICON_PATTERN = re.compile(r"\{\{icon:([a-z0-9-]+)\}\}")
 
@@ -143,6 +143,7 @@ B2B_NAV = [
     ("mision", "Misión", "mision.html", []),
     ("equipo", "Sobre nosotros", "equipo.html", []),
     ("noticias", "Noticias", "noticias.html", []),
+    ("blog", "Blog", "blog.html", []),
 ]
 # Patients navigation: in-page anchors of pacientes.html.
 B2C_NAV = [
@@ -211,6 +212,23 @@ PAGES = [
     Page("noticias.html", "Noticias | Kyobac Labs",
          "Premios, presencia en medios e hitos de Kyobac Labs.", "b2b",
          "noticias"),
+    Page("blog.html", "Blog | Kyobac Labs",
+         "Artículos de Kyobac Labs sobre postbióticos, regulación europea "
+         "y la evolución de los probióticos.", "b2b", "blog"),
+    Page("blog-postbioticos-lista-qps.html",
+         "Cómo los postbióticos sortean la lista QPS | Blog de Kyobac Labs",
+         "Qué es la lista QPS de la EFSA, por qué es tan difícil incorporar "
+         "un microorganismo nuevo y qué cambia cuando se inactiva.", "b2b",
+         "blog"),
+    Page("blog-generaciones-probioticos.html",
+         "1.ª, 2.ª y 3.ª generación de probióticos | Blog de Kyobac Labs",
+         "De las bacterias lácticas a los postbióticos con alta "
+         "concentración de metabolito: cómo ha mejorado la tecnología.",
+         "b2b", "blog"),
+    Page("blog-declaraciones-salud-efsa.html",
+         "Declaraciones de salud EFSA y probióticos | Blog de Kyobac Labs",
+         "Por qué los probióticos apenas tienen declaraciones de salud "
+         "autorizadas en la Unión Europea.", "b2b", "blog"),
     Page("empleo.html", "Trabaja con nosotros | Kyobac Labs",
          "Envía tu CV a Kyobac Labs si quieres trabajar en biotecnología "
          "microbiana y bioinformática.", "b2b", "empleo"),
@@ -394,6 +412,7 @@ def render_footer() -> str:
             <li><a href="mision.html">Misión</a></li>
             <li><a href="equipo.html">Sobre nosotros</a></li>
             <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="empleo.html">Trabaja con nosotros</a></li>
           </ul>
         </div>

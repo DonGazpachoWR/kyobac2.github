@@ -401,6 +401,27 @@ Estudiamos un lípido de la bacteria que, en modelos de laboratorio, modula la i
 Cultivamos la bacteria en subproductos de la industria alimentaria, como la melaza y el suero lácteo.
 Información importante. MycoRelax es un producto en investigación. No es un medicamento ni está autorizado para su venta, y la evidencia disponible procede de estudios preclínicos. Esta página es divulgativa y no sustituye el consejo de un profesional sanitario. Si tienes síntomas de ansiedad, consulta a tu médico.
 
+=== Página: Blog | Kyobac Labs (blog.html) ===
+Blog
+
+# Ciencia y regulación, sin atajos.
+Artículos del equipo de Kyobac Labs sobre postbióticos, regulación europea y la evolución de los probióticos.
+Adrián Berenguer Agustí10.10.2026 Regulación
+
+### Cómo los postbióticos sortean la lista QPS
+Qué es la lista QPS de la EFSA, por qué es tan difícil incorporar un microorganismo nuevo y qué cambia cuando ese microorganismo se inactiva.
+Leer artículo
+Adrián Berenguer Agustí10.10.2026 Tecnología
+
+### 1.ª, 2.ª y 3.ª generación de probióticos: cómo ha mejorado la tecnología
+De las bacterias lácticas vivas a los postbióticos con alta concentración de metabolito terapéutico.
+Leer artículo
+Adrián Berenguer Agustí10.10.2026 Regulación
+
+### Declaraciones de salud EFSA: por qué en el mercado los probióticos apenas tienen declaraciones de salud
+La EFSA exige pruebas de causa y efecto en el producto concreto, y casi ningún probiótico las ha superado.
+Leer artículo
+
 === Información general (cabecera, pie y páginas legales) ===
 La web tiene dos zonas: Empresas (licencias de patentes y bioinformática) y Pacientes (MycoRelax: encuesta y donaciones).
 Contacto: correo kyobac.labs@gmail.com; LinkedIn (https://www.linkedin.com/in/kyobac-labs-131b0a3a3/); Kyobac Labs está en Valencia (España). Para contactar como empresa, usa el botón Contacto de la web o escribe al correo.
