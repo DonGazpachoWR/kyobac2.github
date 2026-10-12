@@ -3,14 +3,15 @@
  *
  * Small progressive enhancements for the Kyobac Labs website: the mobile
  * navigation toggle, the footer year, the reveal-on-scroll effect, the
- * pointer parallax of the image mosaics, starting each page at the top
+ * pointer parallax of the image mosaics, the looping product videos
+ * (home hero and MycoRelax bottle), starting each page at the top
  * shrinking the header logo on scroll, discouraging copying and the
  * "Clara" chat assistant.
  * Every page works without this file.
  *
- * Version: 0.6
+ * Version: 0.8
  * Author: Adrian Berenguer-Agustí (I2SysBio-CSIC)
- * Date: 2026-10-10
+ * Date: 2026-10-11
  */
 (function () {
   "use strict";
@@ -162,7 +163,7 @@
 
   /**
    * Mark the header as scrolled once the page leaves the top, so the CSS
-   * can shrink the logo to the lotus alone.
+   * can shrink the logo to the K monogram alone.
    * @returns {void}
    */
   function setupHeaderScroll() {
@@ -201,6 +202,32 @@
             mosaic.style.setProperty("--my", y.toFixed(1) + "px");
           });
         });
+      });
+    }
+  }
+
+  /**
+   * Play the looping product videos (the home hero's confocal dive and
+   * the MycoRelax bottle; specs in animaciones/) only while they are on
+   * screen. With reduced motion they never play and the poster frame
+   * stays.
+   * @returns {void}
+   */
+  function setupLoopVideos() {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            // Autoplay can be refused (e.g. data saver); the poster stays.
+            entry.target.play().catch(function () {});
+          } else {
+            entry.target.pause();
+          }
+        });
+      });
+      document.querySelectorAll("video.js-loop-video").forEach(function (video) {
+        observer.observe(video);
       });
     }
   }
@@ -535,5 +562,6 @@
   setYear();
   setupReveal();
   setupParallax();
+  setupLoopVideos();
   setupAssistant();
 })();

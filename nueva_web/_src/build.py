@@ -317,7 +317,7 @@ def render_header(page: Page) -> str:
     """
     is_b2b = page.audience == "b2b"
     theme = "" if is_b2b else " theme-light"
-    logo = "logo_h_claro.png" if is_b2b else "logo_h_oscuro.png"
+    logo = "logo_k_claro.svg" if is_b2b else "logo_k_oscuro.svg"
     b2b_current = ' aria-current="true"' if is_b2b else ""
     b2c_current = "" if is_b2b else ' aria-current="true"'
     if is_b2b:
@@ -334,7 +334,7 @@ def render_header(page: Page) -> str:
     result = f"""  <header class="site-header{theme}">
     <div class="header-row">
       <a class="brand" href="{'index.html' if is_b2b else 'pacientes.html'}" aria-label="Kyobac Labs, inicio">
-        <img src="imagenes/{logo}" alt="Kyobac Labs" width="720" height="141">
+        <img src="imagenes/{logo}" alt="Kyobac Labs" width="1480" height="378">
       </a>
       <div class="header-card">
         <nav class="audience-bar" aria-label="Público">
@@ -434,7 +434,7 @@ def render_footer() -> str:
         </div>
       </div>
       <div class="footer-bottom">
-        <img src="imagenes/logo_claro.png" alt="Kyobac Labs" width="640" height="241" loading="lazy">
+        <img src="imagenes/logo_k_claro.svg" alt="Kyobac Labs" width="1480" height="378" loading="lazy">
         <span>© <span class="js-year">2026</span> Kyobac Labs. Todos los derechos reservados. Datos preclínicos: ningún producto de Kyobac Labs está autorizado para su venta.</span>
         <nav class="legal-links" aria-label="Información legal">
           <a href="aviso-legal.html">Aviso legal</a>

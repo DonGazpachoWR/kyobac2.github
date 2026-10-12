@@ -234,13 +234,14 @@ h3 { font-size: 1.15rem; font-weight: 800; }
 .header-row { display: flex; align-items: flex-start; gap: 16px; }
 
 /* The logo sits outside the card. Its box clips the horizontal logo, so
-   narrowing the box leaves only the lotus (229 of 720 px of the image):
-   on small screens always, and on larger ones once the page scrolls. */
+   narrowing the box leaves only the K monogram (0.86 of the height of the
+   1480 x 378 image; YOBAC starts at 0.95): on small screens always, and
+   on larger ones once the page scrolls. */
 .brand {
   --logo-h: 30px;
   flex: none;
   display: block;
-  width: calc(var(--logo-h) * 232 / 141);
+  width: calc(var(--logo-h) * 0.9);
   overflow: hidden;
   margin-top: calc((55px - var(--logo-h)) / 2);
   transition: width .35s var(--ease);
@@ -366,6 +367,19 @@ h3 { font-size: 1.15rem; font-weight: 800; }
 }
 .mosaic .tile:nth-child(odd) img { --d: -1; }
 .mosaic--hero { grid-template-columns: repeat(5, 1fr); aspect-ratio: 5 / 4; }
+/* Hero video (animaciones/hero_3d_confocal): its background is the page's
+   --bg-1, and the outer 12 % fades into the page so the edge never shows. */
+.hero-video { aspect-ratio: 5 / 4; }
+.hero-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+  mask-composite: intersect;
+}
 
 /* Touch screens have no pointer to follow: the images drift slowly. */
 @media (hover: none) {
@@ -388,10 +402,31 @@ h3 { font-size: 1.15rem; font-weight: 800; }
 /* ---------- Hero ---------- */
 .hero { padding: 36px 0 0; overflow: hidden; }
 .hero-grid { display: grid; gap: 40px; align-items: center; }
-.hero .mosaic--hero { width: auto; margin-right: calc(-1 * var(--gutter)); margin-left: 15%; }
+.hero .mosaic--hero,
+.hero .hero-video { width: auto; margin-right: calc(-1 * var(--gutter)); margin-left: 15%; }
 .hero h1 { margin-bottom: 26px; }
 .hero p { color: var(--text); max-width: 34em; }
 .hero p + p { color: var(--muted); }
+/* Full-width hero (animaciones/hero_logo_v4): the 16:9 video spans the
+   window and the copy sits over its left 42 %, which the animation keeps
+   free; on small screens the copy comes first and the whole frame shows
+   below it. */
+.hero--wide { display: flex; flex-direction: column; padding: 24px 0 0; }
+.hero--wide .hero-content { order: 1; }
+.hero--wide .hero-video {
+  order: 2;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  margin: 24px 0 0;
+}
+/* On phones the 4:3 box shows the right three quarters of the 16:9
+   clip, where all the action and the logo are. */
+.hero--wide .hero-video video {
+  object-position: 98% 50%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent);
+}
+.hero--wide h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); }
 
 .page-hero { padding: 54px 0 64px; position: relative; overflow: hidden; }
 .page-hero .container { position: relative; z-index: 1; }
@@ -702,28 +737,38 @@ h3 { font-size: 1.15rem; font-weight: 800; }
   width: var(--p);
   background: linear-gradient(90deg, color-mix(in srgb, var(--c) 45%, transparent), var(--c));
 }
+/* When the table is revealed, each bar grows to its phase once: 900 ms,
+   starting 40 % into the block reveal and 80 ms after the row above.
+   Without JS or with reduced motion the bars are simply full. */
+.js .pipeline .pipe-bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1) calc(280ms + var(--i, 0) * 80ms);
+}
+.js .pipeline.is-visible .pipe-bar { transform: none; }
+.pipe-row:nth-child(3) { --i: 1; }
+.pipe-row:nth-child(4) { --i: 2; }
+.pipe-row:nth-child(5) { --i: 3; }
+.pipe-row:nth-child(6) { --i: 4; }
+.pipe-row:nth-child(n + 7) { --i: 5; }
+@media (prefers-reduced-motion: reduce) {
+  .js .pipeline .pipe-bar { transform: none; transition: none; }
+}
 .pipe-stage { display: block; margin-top: 8px; font-size: .85rem; color: var(--dim); }
 
 /* ---------- Patients (B2C) ---------- */
 .mr-visual { position: relative; max-width: 520px; margin-left: auto; }
-.mr-visual .mosaic { position: absolute; inset: 0; }
-.mr-visual img.bottle {
-  position: relative;
-  z-index: 1;
-  width: 78%;
-  margin: 6% auto 0;
-  filter: drop-shadow(0 30px 40px rgba(17, 24, 29, .25));
-  transition: transform .5s ease;
-  animation: bottle-float 5s ease-in-out infinite;
-}
-.mr-visual img.bottle:hover { transform: scale(1.05) rotate(-2deg); }
-/* The float uses the translate property so it composes with the hover
-   transform instead of overriding it. */
-@keyframes bottle-float {
-  50% { translate: 0 -14px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .mr-visual img.bottle { animation: none; }
+/* MycoRelax bottle video (animaciones/bote_3d_mycorelax): its background
+   is the page's #f8fafc; the outer 8 % fades into the page. */
+.mr-visual video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 896 / 840;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+  mask-composite: intersect;
 }
 
 .action-card { display: flex; flex-direction: column; align-items: flex-start; padding: 34px 30px; background: var(--bg-3); }
@@ -794,7 +839,9 @@ h3 { font-size: 1.15rem; font-weight: 800; }
   color: var(--dim);
   font-size: .85rem;
 }
-.footer-bottom img { height: 56px; width: auto; }
+/* 40 px keeps the wide logo, the notice and the legal links on one row
+   in a 1280 px container. */
+.footer-bottom img { height: 40px; width: auto; }
 .legal-links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
 
 /* ---------- Legal pages ---------- */
@@ -983,8 +1030,8 @@ h3 { font-size: 1.15rem; font-weight: 800; }
 /* ---------- Breakpoints ---------- */
 @media (min-width: 640px) {
   :root { --gutter: 28px; }
-  .brand { width: calc(var(--logo-h) * 720 / 141); }
-  .is-scrolled .brand { width: calc(var(--logo-h) * 232 / 141); }
+  .brand { width: calc(var(--logo-h) * 1480 / 378); }
+  .is-scrolled .brand { width: calc(var(--logo-h) * 0.9); }
   .news-featured { grid-template-columns: 1.2fr 1fr; }
   .news-featured img { height: 100%; aspect-ratio: auto; }
 }
@@ -997,7 +1044,8 @@ h3 { font-size: 1.15rem; font-weight: 800; }
   /* As on BioStrata, the hero mosaic is sized by its square side so the
      whole hero fits in the first screen; it still bleeds to the right
      edge of the window. */
-  .hero .mosaic--hero {
+  .hero .mosaic--hero,
+  .hero .hero-video {
     --bleed: calc(max(0px, (100vw - var(--container)) / 2) + var(--gutter));
     --tile: clamp(104px, min(10vw, (100svh - 190px) / 4), 190px);
     justify-self: end;
@@ -1005,6 +1053,37 @@ h3 { font-size: 1.15rem; font-weight: 800; }
     margin-left: 0;
     margin-right: calc(-1 * var(--bleed));
   }
+  /* The wide hero fills the first screen under the header; the video
+     covers it and a scrim from the left keeps the copy at full
+     contrast. The 56.25vw cap keeps the box no taller than 16:9 on
+     narrow, tall screens, so cover does not crop the logo on the
+     right. */
+  .hero--wide {
+    position: relative;
+    justify-content: center;
+    min-height: clamp(560px, min(100svh - var(--header-h), 56.25vw), 940px);
+    padding: 48px 0;
+  }
+  .hero--wide .hero-video {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    aspect-ratio: auto;
+    margin: 0;
+  }
+  .hero--wide .hero-video::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(23, 29, 36, .94) 0%, rgba(23, 29, 36, .84) 30%, rgba(23, 29, 36, .4) 48%, rgba(23, 29, 36, 0) 60%);
+  }
+  .hero--wide .hero-video video {
+    object-position: 72% 50%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 90%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 90%, transparent);
+  }
+  .hero--wide .hero-content { position: relative; z-index: 1; }
+  .hero--wide .hero-copy { max-width: min(32rem, 44vw); }
   .page-hero { padding: 80px 0 96px; }
   .page-hero-decor {
     display: grid;
