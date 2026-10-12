@@ -19,11 +19,12 @@ After changing the pages, redeploy the Worker so that Clara learns them:
 Jekyll (GitHub Pages) ignores folders that start with "_", so _src is
 not published.
 
-Version: 1.1
+Version: 1.2
 Author: Adrian Berenguer-Agustí (I2SysBio-CSIC)
 Date: 2026-10-10
 """
 
+import hashlib
 import re
 import sys
 from dataclasses import dataclass
@@ -491,6 +492,29 @@ def render_assistant(page: Page) -> str:
     return result
 
 
+def asset_url(relative_path: str) -> str:
+    """Link a stylesheet or script with a version taken from its content.
+
+    GitHub Pages lets browsers cache files for 10 minutes; without the
+    version, a new page could run with the previous CSS and JS.
+
+    Args:
+        relative_path: Path of the file from the site root.
+
+    Returns:
+        The path with a ?v= query of 10 hex characters.
+
+    Raises:
+        FileNotFoundError: If the file does not exist.
+    """
+    asset_path = SITE_DIR / relative_path
+    if not asset_path.is_file():
+        raise FileNotFoundError(f"Asset not found: {asset_path}")
+    digest = hashlib.sha256(asset_path.read_bytes()).hexdigest()[:10]
+    result = f"{relative_path}?v={digest}"
+    return result
+
+
 def render_page(page: Page, main_html: str) -> str:
     """Wrap a <main> fragment with the shared document skeleton.
 
@@ -523,9 +547,9 @@ def render_page(page: Page, main_html: str) -> str:
   <link rel="icon" href="imagenes/favicon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="imagenes/favicon/apple-touch-icon.png">
   <link rel="preload" href="fonts/mulish-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{asset_url("css/style.css")}">
   <script>document.documentElement.classList.add("js");</script>
-  <script src="js/main.js" defer></script>
+  <script src="{asset_url("js/main.js")}" defer></script>
   <script data-goatcounter="https://kyobac.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body{body_class}>
