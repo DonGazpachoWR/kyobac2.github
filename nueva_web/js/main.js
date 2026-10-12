@@ -4,14 +4,14 @@
  * Small progressive enhancements for the Kyobac Labs website: the mobile
  * navigation toggle, the footer year, the reveal-on-scroll effect, the
  * pointer parallax of the image mosaics, the looping product videos
- * (home hero and MycoRelax bottle), starting each page at the top
- * shrinking the header logo on scroll, discouraging copying and the
- * "Clara" chat assistant.
+ * (home hero, and the MycoRelax jar intro and heartbeat loop), starting each
+ * page at the top shrinking the header logo on scroll, discouraging
+ * copying and the "Clara" chat assistant.
  * Every page works without this file.
  *
- * Version: 0.8
+ * Version: 0.9
  * Author: Adrian Berenguer-Agustí (I2SysBio-CSIC)
- * Date: 2026-10-11
+ * Date: 2026-10-12
  */
 (function () {
   "use strict";
@@ -207,10 +207,10 @@
   }
 
   /**
-   * Play the looping product videos (the home hero's confocal dive and
-   * the MycoRelax bottle; specs in animaciones/) only while they are on
-   * screen. With reduced motion they never play and the poster frame
-   * stays.
+   * Play the looping product videos (the home hero's confocal dive;
+   * specs in animaciones/) only while they are on screen, and run the
+   * MycoRelax jar band of the patients page (see setupJarBand). With
+   * reduced motion nothing plays and the poster frames or the still stay.
    * @returns {void}
    */
   function setupLoopVideos() {
@@ -218,7 +218,9 @@
     if (!reduce && "IntersectionObserver" in window) {
       const observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
+          if (entry.target.classList.contains("js-jar-band")) {
+            toggleJarBand(entry.target, entry.isIntersecting);
+          } else if (entry.isIntersecting) {
             // Autoplay can be refused (e.g. data saver); the poster stays.
             entry.target.play().catch(function () {});
           } else {
@@ -226,9 +228,71 @@
           }
         });
       });
-      document.querySelectorAll("video.js-loop-video").forEach(function (video) {
-        observer.observe(video);
+      document.querySelectorAll(".js-jar-band").forEach(setupJarBand);
+      document.querySelectorAll("video.js-loop-video, .js-jar-band").forEach(function (target) {
+        observer.observe(target);
       });
+    }
+  }
+
+  /**
+   * Chain the two videos of a jar band (animaciones/bote_tapon_latido):
+   * the 3 s intro plays once and, when it ends, hands over to the 11.3 s
+   * cycle loop (7 s of heartbeat, capsules back in and lid shut, the spin
+   * and opening again), whose first frame is the intro's last one. The loop starts
+   * loading once the intro plays, and the intro is hidden only when the
+   * loop has painted a frame, so the switch shows no gap.
+   * @param {HTMLElement} band The ".js-jar-band" element.
+   * @returns {void}
+   */
+  function setupJarBand(band) {
+    const intro = band.querySelector(".jar-intro");
+    const loop = band.querySelector(".jar-loop");
+    intro.addEventListener("playing", function () {
+      if (loop.preload !== "auto") {
+        loop.preload = "auto";
+        loop.load();
+      }
+    });
+    intro.addEventListener("ended", function () {
+      if (band.dataset.onscreen === "true") {
+        loop.play().catch(function () {});
+      }
+    });
+    loop.addEventListener("playing", function () {
+      if ("requestVideoFrameCallback" in loop) {
+        loop.requestVideoFrameCallback(function () {
+          band.classList.add("is-looping");
+        });
+      } else {
+        band.classList.add("is-looping");
+      }
+    });
+  }
+
+  /**
+   * Play or pause the current video of a jar band (the intro until it
+   * has ended, then the heartbeat loop) as the band enters or leaves the
+   * viewport.
+   * @param {HTMLElement} band The ".js-jar-band" element.
+   * @param {boolean} is_visible Whether the band is on screen.
+   * @returns {void}
+   */
+  function toggleJarBand(band, is_visible) {
+    const intro = band.querySelector(".jar-intro");
+    const video = intro.ended ? band.querySelector(".jar-loop") : intro;
+    band.dataset.onscreen = String(is_visible);
+    if (is_visible) {
+      band.classList.add("is-motion");
+      video.play().catch(function () {
+        // Autoplay refused (e.g. data saver): the intro's last frame
+        // stays, or, if the intro never started, the still comes back.
+        if (video === intro && !intro.played.length) {
+          band.classList.remove("is-motion");
+        }
+      });
+    } else {
+      video.pause();
     }
   }
 

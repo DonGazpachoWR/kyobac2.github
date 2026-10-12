@@ -55,9 +55,22 @@
   </header>
 
   <main id="main" class="theme-light">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
+    <section class="hero hero--wide hero--jar">
+      <div class="hero-video jar-band js-jar-band" aria-hidden="true">
+        <picture class="jar-still">
+          <img src="imagenes/mycorelax/bote_tapon_poster.webp" width="1600" height="900" alt="">
+        </picture>
+        <video class="jar-intro" muted playsinline preload="none" width="1600" height="900" poster="imagenes/mycorelax/bote_tapon_inicio.webp">
+          <source src="imagenes/mycorelax/bote_tapon_intro.webm" type="video/webm">
+          <source src="imagenes/mycorelax/bote_tapon_intro.mp4" type="video/mp4">
+        </video>
+        <video class="jar-loop" muted loop playsinline preload="none" width="1600" height="900">
+          <source src="imagenes/mycorelax/bote_tapon_ciclo.webm" type="video/webm">
+          <source src="imagenes/mycorelax/bote_tapon_ciclo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-copy">
           <span class="eyebrow">Pacientes · MycoRelax</span>
           <h1>El primer postbiótico eficaz para reducir el estrés y la ansiedad.</h1>
           <p class="claim-flag"><span class="placeholder">[Alegación autorizada]</span></p>
@@ -67,12 +80,6 @@
             <a class="btn btn--accent" href="https://docs.google.com/forms/d/e/1FAIpQLSet7NSrcqk8EsQy1oftCg3dcnevxsJ_NIiP5No1gonkrwAQoQ/viewform" target="_blank" rel="noopener">Responder la encuesta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m10.5 8 4 4-4 4"/></svg></a>
             <a class="btn btn--line" href="#donar">Apoyar la investigación</a>
           </div>
-        </div>
-        <div class="mr-visual">
-          <video class="js-loop-video" muted loop playsinline preload="metadata" width="896" height="840" poster="imagenes/mycorelax/bote_3d_mycorelax_poster.webp" aria-label="Prototipo de bote de MycoRelax que se abre y deja salir tres cápsulas">
-            <source src="imagenes/mycorelax/bote_3d_mycorelax.webm" type="video/webm">
-            <source src="imagenes/mycorelax/bote_3d_mycorelax.mp4" type="video/mp4">
-          </video>
         </div>
       </div>
     </section>
