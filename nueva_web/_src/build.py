@@ -519,6 +519,9 @@ def render_page(page: Page, main_html: str) -> str:
   <title>{page.title}</title>
   <meta name="description" content="{page.description}">
   <meta name="theme-color" content="#171d24">
+  <link rel="icon" href="imagenes/favicon/favicon.ico" sizes="48x48">
+  <link rel="icon" href="imagenes/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="imagenes/favicon/apple-touch-icon.png">
   <link rel="preload" href="fonts/mulish-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add("js");</script>

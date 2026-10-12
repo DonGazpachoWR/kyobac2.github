@@ -11,6 +11,9 @@
   <title>MycoRelax · Pacientes | Kyobac Labs</title>
   <meta name="description" content="MycoRelax, el postbiótico en investigación de Kyobac Labs. Participa en la encuesta o apoya la investigación con una donación.">
   <meta name="theme-color" content="#171d24">
+  <link rel="icon" href="imagenes/favicon/favicon.ico" sizes="48x48">
+  <link rel="icon" href="imagenes/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="imagenes/favicon/apple-touch-icon.png">
   <link rel="preload" href="fonts/mulish-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add("js");</script>
@@ -52,11 +55,24 @@
   </header>
 
   <main id="main" class="theme-light">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Pacientes · MycoRelax</span>
-          <h1>El primer postbiótico eficaz para reducir el estrés y la ansiedad.</h1>
+    <section class="hero hero--jar">
+      <div class="container">
+        <span class="eyebrow">Pacientes · MycoRelax</span>
+        <h1 class="jar-title">El primer postbiótico eficaz para reducir el estrés y la ansiedad.</h1>
+        <div class="jar-band js-jar-band" aria-hidden="true">
+          <picture class="jar-still">
+            <img src="imagenes/mycorelax/bote_rebote_poster.webp" width="1920" height="1080" alt="">
+          </picture>
+          <video class="jar-intro" muted playsinline preload="none" width="1920" height="1080" poster="imagenes/mycorelax/bote_rebote_inicio.webp">
+            <source src="imagenes/mycorelax/bote_rebote_intro.webm" type="video/webm">
+            <source src="imagenes/mycorelax/bote_rebote_intro.mp4" type="video/mp4">
+          </video>
+          <video class="jar-loop" muted loop playsinline preload="none" width="1920" height="1080">
+            <source src="imagenes/mycorelax/bote_rebote_loop.webm" type="video/webm">
+            <source src="imagenes/mycorelax/bote_rebote_loop.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="jar-copy">
           <p class="claim-flag"><span class="placeholder">[Alegación autorizada]</span></p>
           <p>MycoRelax es el postbiótico en investigación de Kyobac Labs para la reducción del estrés y la ansiedad.</p>
           <p>Todavía no está a la venta: estamos en fase de investigación, y tu opinión y tu apoyo nos ayudan a avanzar.</p>
@@ -64,12 +80,6 @@
             <a class="btn btn--accent" href="https://docs.google.com/forms/d/e/1FAIpQLSet7NSrcqk8EsQy1oftCg3dcnevxsJ_NIiP5No1gonkrwAQoQ/viewform" target="_blank" rel="noopener">Responder la encuesta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m10.5 8 4 4-4 4"/></svg></a>
             <a class="btn btn--line" href="#donar">Apoyar la investigación</a>
           </div>
-        </div>
-        <div class="mr-visual">
-          <video class="js-loop-video" muted loop playsinline preload="metadata" width="896" height="840" poster="imagenes/mycorelax/bote_3d_mycorelax_poster.webp" aria-label="Prototipo de bote de MycoRelax que se abre y deja salir tres cápsulas">
-            <source src="imagenes/mycorelax/bote_3d_mycorelax.webm" type="video/webm">
-            <source src="imagenes/mycorelax/bote_3d_mycorelax.mp4" type="video/mp4">
-          </video>
         </div>
       </div>
     </section>
